@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detail_movie_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15sp"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"
+                android:text="@string/movie_title"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/detail_movie_item_image"
+                android:layout_width="140dp"
+                android:layout_height="230dp"
+                android:layout_below="@+id/detail_movie_item_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@android:color/holo_red_dark" />
+            <TextView
+                android:id="@+id/detail_movie_item_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"
+                android:layout_below="@+id/detail_movie_item_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="11dp"
+                android:text="@string/movie_description" />
+
+            <RadioGroup
+                android:id="@+id/detail_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/detail_movie_item_description"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="300sp"
+                android:textSize="9sp">
+
+                <RadioButton
+                    android:id="@+id/detail_already_seen_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="alreadySeenChecked"
+                    android:text="@string/already_seen_btn"/>
+
+                <RadioButton
+                    android:id="@+id/detail_want_to_see_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="wantToSeeChecked"
+                    android:text="@string/want_to_see_btn"/>
+
+                <RadioButton
+                    android:id="@+id/detail_do_not_like_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="doNotLikeChecked"
+                    android:text="@string/do_not_like_btn"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/detail_submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/detail_radio_group"
+                android:text="@string/submit" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

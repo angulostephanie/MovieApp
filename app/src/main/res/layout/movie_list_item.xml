@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/movie_item_image"
+        android:layout_width="90dp"
+        android:layout_height="140dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:contentDescription="Movie thumbnail"
+        android:scaleType="fitCenter"
+        app:srcCompat="@android:color/holo_red_dark" />
+
+    <RelativeLayout
+        android:id = "@+id/movie_list_text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/movie_item_image">
+
+        <TextView
+            android:id="@+id/movie_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textSize="20sp"
+            android:text="Movie Title" />
+
+        <TextView
+            android:id="@+id/movie_item_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/movie_item_title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:maxLines="3"
+            android:textSize="9sp"
+            android:text="Movie description" />
+
+        <TextView
+            android:id="@+id/movie_item_characters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/movie_item_description"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:maxLines="3"
+            android:textSize="13sp"
+            android:text="Movie description" />
+
+        <TextView
+            android:id="@+id/movie_item_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/movie_item_characters"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:maxLines="3"
+            android:textSize="11sp"
+            android:text="Has Seen?" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

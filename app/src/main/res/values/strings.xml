@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="already_seen_btn">Already Seen</string>
+    <string name="want_to_see_btn">Want to See</string>
+    <string name="do_not_like_btn">Don\'t like it</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_description">The movie description would go here!</string>
+    <string name="submit">SUBMIT</string>
+</resources>

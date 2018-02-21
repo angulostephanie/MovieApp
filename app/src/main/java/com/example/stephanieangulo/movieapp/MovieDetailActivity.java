@@ -27,7 +27,6 @@ public class MovieDetailActivity extends AppCompatActivity {
     boolean wantToSee;
     boolean doNotLike;
     int i;
-//    int i;
 
 
     @Override

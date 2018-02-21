@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private ListView mListView;
     private Context mContext;
     private MovieAdapter adapter;
-
     ArrayList<Movie> movies;
 
     @Override
@@ -27,12 +26,11 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MovieAdapter(mContext, movies);
         mListView = findViewById(R.id.movie_list_view);
         mListView.setAdapter(adapter);
-
+        adapter.notifyDataSetChanged();
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Movie selectedMovie = movies.get(i);
-                System.out.println(i);
                 launchActivity(selectedMovie, i);
 
             }
@@ -40,20 +38,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void launchActivity(Movie selectedMovie, int i) {
-        // package intent
-        // start activity
-
-        // 1. intent with from and to
-
         Intent detailIntent = new Intent(mContext, MovieDetailActivity.class);
-
         detailIntent.putExtra("title", selectedMovie.title);
         detailIntent.putExtra("poster", selectedMovie.poster);
         detailIntent.putExtra("description", selectedMovie.description);
         detailIntent.putExtra("position", i);
-        // 3. start activity with the intent
-
-        // we want to pass data back and forth between activities
         startActivityForResult(detailIntent, 1);
     }
 
@@ -69,17 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if(alreadySeen) {
                     movies.get(i).dynamicText = "Already Seen";
-                    System.out.println(i);
-                    System.out.println("***********************");
                 } else if(wantToSee) {
                     movies.get(i).dynamicText = "Want to See";
-                    System.out.println(i);
-                    System.out.println("***********************");
                 } else if (doNotLike) {
                     movies.get(i).dynamicText = "Don't like";
-                    System.out.println(i);
-                    System.out.println("***********************");
                 }
+
                 adapter.notifyDataSetChanged();
             }
         }

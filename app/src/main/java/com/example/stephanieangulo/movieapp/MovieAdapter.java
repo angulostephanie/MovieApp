@@ -61,28 +61,22 @@ public class MovieAdapter extends BaseAdapter {
 
             view.setTag(holder);
         } else {
-            // get the view holder from view
             holder = (ViewHolder) view.getTag();
 
-            // get relative subview of the row view
             TextView titleTextView = holder.titleTextView;
             TextView descriptionTextView = holder.descriptionTextView;
             ImageView posterImageView = holder.posterImageView;
             TextView characterTextView = holder.characterTextView;
             TextView hasSeenTextView = holder.hasSeenTextView;
 
-            // get corresponding recipe for each row
             Movie movie = (Movie) getItem(i);
 
             titleTextView.setText(movie.title);
             titleTextView.setTextSize(20);
-
             descriptionTextView.setText(movie.description);
             descriptionTextView.setTextSize(9);
-
             characterTextView.setText(movie.characters);
             characterTextView.setTextSize(13);
-
             hasSeenTextView.setTextSize(11);
             hasSeenTextView.setText(movie.dynamicText);
             hasSeenTextView.setTextColor(Color.GRAY);
